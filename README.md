@@ -1,102 +1,224 @@
-# AI-Based Defect Detection System
+# AI Defect Detection System
+
+## Overview
+
+AI Defect Detection System is a Computer Vision and Deep Learning based application designed to automatically identify manufacturing defects from product images.
+
+The system classifies images into multiple categories including:
+
+* Crack
+* Dent
+* Scratch
+* Discoloration
+* Good (No Defect)
+
+The project includes model training, defect prediction, and an interactive Streamlit dashboard for visualization and monitoring.
+
+---
 
 ## Features
 
-- ✅ Multi-class Defect Classification
-- ✅ Object Detection with YOLO
-- ✅ Anomaly Detection with Autoencoders
-- ✅ Real-time Video Processing
-- ✅ Edge Deployment (TensorFlow Lite)
-- ✅ Database Integration
-- ✅ Alert System (Email/SMS/Slack)
-- ✅ Real-time Dashboard
+✅ Multi-Class Defect Detection
+
+✅ Deep Learning Based Image Classification
+
+✅ Interactive Streamlit Dashboard
+
+✅ Real-Time Image Prediction
+
+✅ Model Training Pipeline
+
+✅ Performance Visualization
+
+✅ Configurable Alert System
+
+✅ Structured Dataset Management
+
+---
+
+## Defect Categories
+
+| Class         | Description              |
+| ------------- | ------------------------ |
+| Good          | Defect-Free Product      |
+| Crack         | Surface Cracks           |
+| Dent          | Physical Deformation     |
+| Scratch       | Surface Scratches        |
+| Discoloration | Color or Texture Defects |
+
+---
+
+## Project Structure
+
+```text
+AI-Defect-Detection/
+│
+├── app.py
+├── train.py
+├── detect.py
+├── config.py
+├── alert_config.json
+│
+├── dashboard/
+│   ├── __init__.py
+│   └── app.py
+│
+├── data/
+│   ├── train/
+│   └── test/
+│
+├── binary_training_history.png
+│
+└── README.md
+```
+
+---
+
+## Technology Stack
+
+### Programming Language
+
+* Python
+
+### Machine Learning / AI
+
+* TensorFlow / Keras
+* NumPy
+* OpenCV
+
+### Visualization
+
+* Matplotlib
+* Plotly
+
+### Dashboard
+
+* Streamlit
+
+### Data Processing
+
+* Pandas
+
+---
 
 ## Installation
+
+### Clone Repository
+
+```bash
+git clone https://github.com/Pradyumansharma444/AI-Defect-Detection.git
+cd AI-Defect-Detection
+```
+
+### Create Virtual Environment
+
+```bash
+python -m venv venv
+```
+
+### Activate Environment
+
+Windows
+
+```bash
+venv\Scripts\activate
+```
+
+Linux / Mac
+
+```bash
+source venv/bin/activate
+```
+
+### Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## Usage
+---
 
-### Generate Synthetic Dataset
-
-```bash
-python utils/data_generator.py
-```
-
-### Train the Model
+## Train Model
 
 ```bash
 python train.py
 ```
 
-### Detect Defects in an Image
+---
+
+## Run Defect Detection
 
 ```bash
-python main.py --mode image --image path/to/image.jpg
+python detect.py
 ```
 
-### Start Real-time Video Processing
+---
+
+## Launch Dashboard
 
 ```bash
-python main.py --mode video --camera 0
+streamlit run app.py
 ```
 
-### Launch Dashboard
+or
 
 ```bash
-python main.py --mode dashboard
+streamlit run dashboard/app.py
 ```
 
-### Deploy to Edge
+---
 
-```bash
-python main.py --mode deploy --model models/defect_detector.h5
-```
+## Workflow
 
-## Project Structure
+1. Collect product images.
+2. Organize images into defect categories.
+3. Train the deep learning model.
+4. Evaluate model performance.
+5. Upload new product images.
+6. Predict defect type.
+7. Visualize results through dashboard.
 
-```
-defect_detection_system/
-├── models/
-│   ├── __init__.py
-│   ├── multi_class_defect_detector.py
-│   ├── yolo_defect_detector.py
-│   └── anomaly_detector.py
-├── services/
-│   ├── __init__.py
-│   ├── video_processor.py
-│   ├── edge_deployment.py
-│   ├── database.py
-│   └── alert_system.py
-├── dashboard/
-│   ├── __init__.py
-│   └── app.py
-├── utils/
-│   ├── __init__.py
-│   └── data_generator.py
-├── data/
-│   ├── train/
-│   │   ├── good/
-│   │   └── defective/
-│   ├── val/
-│   │   ├── good/
-│   │   └── defective/
-│   └── test/
-│       ├── good/
-│       └── defective/
-├── config.py
-├── train.py
-├── detect.py
-├── app.py
-├── main.py
-├── setup.py
-├── requirements.txt
-└── README.md
-```
+---
 
-## Configuration
+## Dataset
 
-Edit `config.py` to adjust model parameters.
-Edit `alert_config.json` to configure email, SMS, and Slack alerts.
+The dataset contains thousands of labeled images divided into:
+
+* Training Set
+* Testing Set
+
+Classes:
+
+* Good
+* Crack
+* Dent
+* Scratch
+* Discoloration
+
+---
+
+## Future Improvements
+
+* Object Detection Support
+* Defect Localization using Bounding Boxes
+* Model Explainability
+* Cloud Deployment
+* Real-Time Camera Inspection
+* Industrial IoT Integration
+
+---
+
+## Author
+
+Pradyuman Sharma
+
+Software Developer | AI & Machine Learning Enthusiast
+
+GitHub:
+https://github.com/Pradyumansharma444
+
+---
+
+## License
+
+This project is intended for educational, research, and industrial learning purposes.
